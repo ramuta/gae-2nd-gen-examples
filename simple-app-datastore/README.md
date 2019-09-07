@@ -6,6 +6,14 @@ This is an example of a simple GAE app with a Datastore Emulator.
 
 ![](static/img/preview.png)
 
+## Requirements
+
+Install the necessary libraries using this command:
+
+    pip install -r requirements.txt
+
+Using a virtual environment is strongly encouraged!
+
 ## Running the Datastore Emulator and the web app
 
 ### Step 1: Run the Datastore Emulator script
@@ -15,6 +23,8 @@ Open the Terminal in PyCharm, navigate to the project root (if you're not there 
     sh run_datastore_emulator.sh
 
 ### Step 2: Run the web app
+
+> Assuming you use the PyCharm IDE.
 
 Right-click on `main.py` and select `Run 'main'`. Your web app will now be accessible via `localhost:8080`. Whenever 
 you'll make any change in your code, make sure to **reload** the web app via this button:
