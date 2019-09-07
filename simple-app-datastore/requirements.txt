@@ -1,0 +1,4 @@
+Flask
+google-cloud-datastore==1.7.0
+mock
+google-auth

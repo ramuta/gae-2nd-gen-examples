@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple GAE app with Datastore example</title>
+
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <h1>Simple GAE app with Datastore example</h1>
+
+    <p>
+        Enter your message:
+
+        <form method="post" action="/">
+            <input type="text" name="message">
+            <button type="submit">Submit</button>
+        </form>
+    </p>
+
+    {% for item in messages %}
+    <p>{{ item.message }}</p>
+    {% endfor %}
+
+</body>
+</html>
