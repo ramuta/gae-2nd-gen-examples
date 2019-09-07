@@ -17,7 +17,7 @@ Using a virtual environment is strongly encouraged!
 Right-click on `main.py` and select `Run 'main'`. Your web app will now be accessible via `localhost:8080`. Whenever 
 you'll make any change in your code, make sure to **reload** the web app via this button:
 
-![](static/img/reload-web-app.png)
+![](../simple-app-datastore/static/img/reload-web-app.png)
 
 ## Shut down the web app
 
