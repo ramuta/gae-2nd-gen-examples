@@ -1,6 +1,6 @@
 # Simple GAE app with Datastore Emulator
 
-This is an example of a simple GAE app with a Datastore Emulator.
+This is an example of a simple GAE app with a Datastore Emulator and tests (using pytest).
 
 ## Preview
 
