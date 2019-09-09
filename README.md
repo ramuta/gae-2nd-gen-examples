@@ -9,6 +9,20 @@ This repository holds examples of Python 3 web apps that run on the Google App E
 or Firestore emulator (via Cloud SDK)
 - [Cloud SDK](https://cloud.google.com/sdk/docs/quickstarts)
 
+### Cloud SDK components
+
+Make sure you have the following Cloud SDK components installed ([instructions](https://cloud.google.com/sdk/docs/components)):
+
+- Cloud SDK Core Libraries (core)
+- gcloud app Python Extensions (app-engine-python)
+- gcloud app Python Extensions - Extra Libraries (app-engine-python-extras)
+- gcloud Beta Commands (beta)
+
+If you'll use Datastore or Firestore, you'll need to install one of these (or both) components too:
+
+- Cloud Datastore Emulator (cloud-datastore-emulator)
+- Cloud Firestore Emulator (cloud-firestore-emulator)
+
 ## Examples
 
 - **[simple-gae-app](https://github.com/smartninja/gae-2nd-gen-examples/tree/master/simple-gae-app)**: A simple Flask app with all the basic GAE settings needed. No database included here.
