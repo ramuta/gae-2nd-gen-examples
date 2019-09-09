@@ -14,7 +14,7 @@ Install the necessary libraries using this command:
 
 Using a virtual environment is strongly encouraged!
 
-## Running the emulator and the web app via run.py
+## Running the emulator and the web app via run.py (RECOMMENDED)
 
 > This has only been tested on Mac so far. Not sure if it's working on Linux or Windows.
 
