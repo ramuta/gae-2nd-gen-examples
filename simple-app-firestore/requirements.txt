@@ -1,4 +1,4 @@
 Flask
-google-cloud-datastore
+google-cloud-firestore
 mock
 google-auth

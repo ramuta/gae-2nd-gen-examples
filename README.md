@@ -108,6 +108,15 @@ features than native Firestore. So if you're creating a new project with an empt
 If it's not enabled automatically, just type either "Datastore" or "Firestore" in the Search box on Google Cloud 
 Platform. Once you click on the selection, the Datastore/Firestore will be automatically enabled.
 
+## Troubleshooting
+
+Note that `google-cloud-datastore` requires a `google-cloud-core` library version less than 0.30.0 (currently 0.28.1), while 
+`google-cloud-firestore` requires a version bigger than 1.0.0. (currently 1.0.3). That's why you're probably need to use two 
+separate virtual environments (one with the datastore lib and the other with the firestore lib).
+
+Or to run `pip install google-cloud-datastore` or `google-cloud-firestore` each time you would want to switch the 
+project.
+
 ## Improvement proposals or issues found?
 
 Please [create a new issue](https://github.com/smartninja/gae-2nd-gen-examples/issues/new) in case there's some bug or 

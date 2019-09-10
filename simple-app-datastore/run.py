@@ -32,7 +32,7 @@ if test == "yes":
 else:
     print("Preparing to run the web app.")
     emulator_port = "8001"
-    main_command = "python main.py"
+    main_command = "export FLASK_APP=main.py && flask run --host localhost --port 8080 --reload"
 
 # Run datastore emulator
 emulator_command = 'gcloud beta emulators datastore start --no-legacy --data-dir=. --project test --host-port "localhost:{}"'.format(emulator_port)

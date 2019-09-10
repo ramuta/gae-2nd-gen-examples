@@ -2,19 +2,15 @@ import os
 import time
 import atexit
 
-# Datastore emulator instance
-run_datastore = None
+# Firestore emulator instance
+run_firestore = None
 
 
 # Exit handler to stop the emulator
 def exit_handler():
-    """
-    Needed to stop the emulator
-    :return: None
-    """
-    if run_datastore:
-        run_datastore.close()
-        print("Datastore emulator stopped.")
+    if run_firestore:
+        run_firestore.close()
+        print("Firestore emulator stopped.")
     print("Exiting the script")
 
 
@@ -34,9 +30,9 @@ else:
     emulator_port = "8001"
     main_command = "export FLASK_APP=main.py && flask run --host localhost --port 8080 --reload"
 
-# Run datastore emulator
-emulator_command = 'gcloud beta emulators datastore start --no-legacy --data-dir=. --project test --host-port "localhost:{}"'.format(emulator_port)
-run_datastore = os.popen(emulator_command)
+# Run firestore emulator
+emulator_command = 'gcloud beta emulators firestore start --project test --host-port "localhost:{}"'.format(emulator_port)
+run_firestore = os.popen(emulator_command)
 
 # 10 seconds wait for the Emulator to start
 # TODO: replace with checking the localhost:port response which should be "Ok"

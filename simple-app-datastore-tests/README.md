@@ -49,11 +49,22 @@ you'll make any change in your code, make sure to **reload** the web app via thi
 
 To **shut down** the web app click the **red square icon** below the reload button.
 
-Alternatively, you can run the web app via the Terminal:
+Alternatively, you can run the web app via the Terminal with this command:
 
     python main.py
 
 In this case you'll have to shut it down using CTRL+C combo.
+
+Or, if you'd like to use Flask's auto-reloading features, run the web app with these two commands:
+
+    export FLASK_APP=main.py
+    flask run --host localhost --port 8080 --reload
+
+This will automatically reload your app whenever you make any changes in your Python files.
+
+### Properly shutting down the Datastore Emulator (if not using run.py)
+
+The easiest way to shut down the Datastore Emulator is to properly shut down the Terminal window:
 
 ### Properly shutting down the Datastore Emulator (if not using run.py)
 
@@ -70,6 +81,14 @@ When you run the command written above it will give you the **ID of the process*
 this:
 
     kill ID  # if the ID is 12345, run "kill 12345"
+
+## Localhost logging
+
+The default logging level in Flask is **warning**, so use this lines for logging:
+
+    logging.warning("logging text")
+
+Alternatively, you can change Flask logging settings to allow lower logging levels to show up on localhost.
 
 ## Deployment to GAE
 
