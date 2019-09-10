@@ -1,3 +1,4 @@
+import os
 from flask import Flask, render_template
 
 app = Flask(__name__)
@@ -10,4 +11,7 @@ def index():
 
 
 if __name__ == '__main__':
-    app.run(port=8080, host="localhost")
+    if os.getenv('GAE_ENV', '').startswith('standard'):
+        app.run()  # production
+    else:
+        app.run(port=8080, host="localhost")  # localhost
