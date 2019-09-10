@@ -71,6 +71,10 @@ this:
 
     kill ID  # if the ID is 12345, run "kill 12345"
 
+## Deployment to GAE
+
+See [these instructions](https://github.com/smartninja/gae-2nd-gen-examples#deployment-to-google-app-engine).
+
 ## Issues
 
 Please [create a new issue](https://github.com/smartninja/gae-2nd-gen-examples/issues/new) in case there's some bug or 
