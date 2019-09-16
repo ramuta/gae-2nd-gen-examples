@@ -33,7 +33,7 @@ If you'll use Datastore or Firestore, you'll need to install one of these (or bo
 - **[simple-app-datastore](https://github.com/smartninja/gae-2nd-gen-examples/tree/master/simple-app-datastore)**: A simple Flask app that allows you to store items in Datastore (Datastore Emulator is used).
 - **[simple-app-datastore-tests](https://github.com/smartninja/gae-2nd-gen-examples/tree/master/simple-app-datastore-tests)**: Flask app with Datastore and tests (pytest).
 - **[simple-app-firestore](https://github.com/smartninja/gae-2nd-gen-examples/tree/master/simple-app-firestore)**: Flask app with the Firestore database
-- **simple-app-firestore-tests**
+- **[simple-app-firestore-tests](https://github.com/smartninja/gae-2nd-gen-examples/tree/master/simple-app-firestore-tests)**: Flask app with Firestore + tests
 - **simple-app-sql**
 - **simple-app-sql-tests**
 - **structured-app-firestore**
