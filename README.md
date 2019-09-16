@@ -111,11 +111,13 @@ Platform. Once you click on the selection, the Datastore/Firestore will be autom
 ## Troubleshooting
 
 Note that `google-cloud-datastore` requires a `google-cloud-core` library version less than 0.30.0 (currently 0.28.1), while 
-`google-cloud-firestore` requires a version bigger than 1.0.0. (currently 1.0.3). That's why you're probably need to use two 
+`google-cloud-firestore` requires a version bigger than 1.0.0. (currently 1.0.3). That's why you might need to use two 
 separate virtual environments (one with the datastore lib and the other with the firestore lib).
 
 Or to run `pip install google-cloud-datastore` or `google-cloud-firestore` each time you would want to switch the 
 project.
+
+But in my experience this wasn't needed. Try it out and you'll see.
 
 ## Improvement proposals or issues found?
 
