@@ -19,7 +19,7 @@
     </p>
 
     {% for item in messages %}
-    <p>{{ item.message }}, {{item.id}}</p>
+    <p>{{ item.message }} <small><em>(message ID: {{item.id}})</em></small></p>
     {% endfor %}
 
 </body>
