@@ -1,3 +1,4 @@
+import logging
 import os
 
 import mock
@@ -20,7 +21,7 @@ def index():
         os.environ["FIRESTORE_DATASET"] = "test"
         os.environ["FIRESTORE_PROJECT_ID"] = "test"
 
-        if app.config['TESTING']:
+        if os.getenv('TESTING', '').startswith('yes'):
             os.environ["FIRESTORE_EMULATOR_HOST"] = "localhost:8002"
             os.environ["FIRESTORE_EMULATOR_HOST_PATH"] = "localhost:8002/firestore"
             os.environ["FIRESTORE_HOST"] = "http://localhost:8002"
@@ -38,7 +39,16 @@ def index():
 
     messages = []
     for message in messages_gen:
-        message_dict = message.to_dict()  # converting a message document into dict
+        logging.warning(type(message))  # Type is DocumentSnapshot (google/cloud/firestore_v1/document.py)
+        logging.warning(message.get("message"))  # this is how you get data from DocumentSnapshot
+
+        # interesting in-built time features
+        logging.warning(message.read_time)
+        logging.warning(message.create_time)
+        logging.warning(message.update_time)
+
+        message_dict = message.to_dict()  # converting DocumentSnapshot into a dictionary
+
         message_dict["id"] = message.id  # adding message ID to the dict, because it's not there by default
         messages.append(message_dict)  # appending the message dict to the messages list
 

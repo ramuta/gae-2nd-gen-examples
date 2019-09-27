@@ -2,6 +2,8 @@
 
 This repository holds examples of Python 3 web apps that run on the Google App Engine (GAE) 2nd Generation environment.
 
+> If you find this repository useful, please **star** it ;) 
+
 ## Prerequisites
 
 - [Python 3](https://www.python.org/)
@@ -32,11 +34,11 @@ If you'll use Datastore or Firestore, you'll need to install one of these (or bo
 - **[simple-gae-app](https://github.com/smartninja/gae-2nd-gen-examples/tree/master/simple-gae-app)**: A simple Flask app with all the basic GAE settings needed. No database included here.
 - **[simple-app-datastore](https://github.com/smartninja/gae-2nd-gen-examples/tree/master/simple-app-datastore)**: A simple Flask app that allows you to store items in Datastore (Datastore Emulator is used).
 - **[simple-app-datastore-tests](https://github.com/smartninja/gae-2nd-gen-examples/tree/master/simple-app-datastore-tests)**: Flask app with Datastore and tests (pytest).
-- **[simple-app-firestore](https://github.com/smartninja/gae-2nd-gen-examples/tree/master/simple-app-firestore)**: Flask app with the Firestore database
-- **[simple-app-firestore-tests](https://github.com/smartninja/gae-2nd-gen-examples/tree/master/simple-app-firestore-tests)**: Flask app with Firestore + tests
+- **[simple-app-firestore](https://github.com/smartninja/gae-2nd-gen-examples/tree/master/simple-app-firestore)**: Flask app with the Firestore database.
+- **[simple-app-firestore-tests](https://github.com/smartninja/gae-2nd-gen-examples/tree/master/simple-app-firestore-tests)**: Flask app with Firestore + tests.
+- **[structured-app-firestore](https://github.com/smartninja/gae-2nd-gen-examples/tree/master/structured-app-firestore)**: A structured Flask app with Firestore + tests. Gives you an idea how to structure your web app.
 - **simple-app-sql**
 - **simple-app-sql-tests**
-- **structured-app-firestore**
 - **app-firestore-custom-auth**
 - **app-firestore-firebase-auth**
 

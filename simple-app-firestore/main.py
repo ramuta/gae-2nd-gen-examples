@@ -1,3 +1,4 @@
+import logging
 import os
 
 import mock
@@ -31,7 +32,16 @@ def index():
 
     messages = []
     for message in messages_gen:
-        message_dict = message.to_dict()  # converting a message document into dict
+        logging.warning(type(message))  # Type is DocumentSnapshot (google/cloud/firestore_v1/document.py)
+        logging.warning(message.get("message"))  # this is how you get data from DocumentSnapshot
+
+        # interesting in-built time features
+        logging.warning(message.read_time)
+        logging.warning(message.create_time)
+        logging.warning(message.update_time)
+
+        message_dict = message.to_dict()  # converting DocumentSnapshot into a dictionary
+
         message_dict["id"] = message.id  # adding message ID to the dict, because it's not there by default
         messages.append(message_dict)  # appending the message dict to the messages list
 
