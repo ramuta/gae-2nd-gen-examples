@@ -1,0 +1,5 @@
+Flask
+google-cloud-firestore
+mock
+google-auth
+pytest

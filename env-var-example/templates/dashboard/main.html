@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Unprotected dashboard</title>
+</head>
+<body>
+    <h1>Dashboard</h1>
+    <small><a href="{{ url_for('index') }}">Index</a></small> |
+    <small><a href="{{ url_for('dashboard.env_var.create') }}">Create env var</a></small>
+
+    <h2>Env Vars:</h2>
+
+    <ul>
+        {% for env_var in env_vars %}
+        <li><a href="{{ url_for('dashboard.env_var.details', var_id=env_var.id) }}">{{ env_var.name }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

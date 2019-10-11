@@ -1,17 +1,10 @@
-# Structured GAE app with Firestore Emulator
+# Env Var example with Firestore Emulator
 
-This is an example of a more **structured** Flask GAE app with a Firestore Emulator.
+This is an example of a Flask GAE app that uses Environment Variables. Note that traditional env vars are not supported 
+on GAE, that's why this example implements them in Cloud Firestore.
 
-Instead of having everything in one file (`main.py`), the code is structured into multiple folders and files:
-
-- **Handlers/Controllers** are in the `handlers` folder. Note that handlers **do not** use `@app.route()` decorators 
-anymore to avoid the [circular imports problem](https://stackabuse.com/python-circular-imports/). Instead, routes are 
-separated from handlers and moved into `main.py`.
-- **Database logic** has been moved into the `models` folder.
-- **Routes**: As mentioned, routes are done differently because I personally prefer having them in a separate file (or 
-in many separate files called `routes.py`, similar to the approach used in Django). In this example, all routes are 
-in the `main.py` file. As mentioned, this is needed to avoid the **circular imports** issue. Alternatively, you could use 
-**Flask blueprints** to avoid circular imports.
+There are also a lot of other examples, like getting one element from the collection via its ID and using url_for feature 
+in Jinja.
 
 ## Preview
 
