@@ -43,6 +43,10 @@ If you'll use Datastore or Firestore, you'll need to install one of these (or bo
 - **app-firestore-custom-auth**
 - **app-firestore-firebase-auth**
 
+### How to run the examples?
+
+Click on each example and check the README.md there - it has all the instructions you need.
+
 ## Deployment to Google App Engine
 
 ### 1) gcloud init
