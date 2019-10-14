@@ -39,6 +39,7 @@ If you'll use Datastore or Firestore, you'll need to install one of these (or bo
 - **simple-app-sql**
 - **simple-app-sql-tests**
 - **[structured-app-firestore](https://github.com/smartninja/gae-2nd-gen-examples/tree/master/structured-app-firestore)**: A structured Flask app with Firestore + tests. Gives you an idea how to structure your web app.
+- **[structured-app-ndb](https://github.com/smartninja/gae-2nd-gen-examples/tree/master/structured-app-ndb)**: An example using the new ndb library for Python 3 GAE runtime.
 - **[env-var-example](https://github.com/smartninja/gae-2nd-gen-examples/tree/master/env-var-example)**: GAE does not support environment variables, so the alternative is to write them in the database instead. Here's an example how.
 - **app-firestore-custom-auth**
 - **app-firestore-firebase-auth**
