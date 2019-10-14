@@ -18,9 +18,11 @@
         </form>
     </p>
 
-    {% for item in messages %}
-    <p>{{ item.text }}</p>
-    {% endfor %}
+    {% if messages %}
+        {% for item in messages %}
+            <p>{{ item.text }}</p>
+        {% endfor %}
+    {% endif %}
 
 </body>
 </html>
