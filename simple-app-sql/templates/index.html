@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Simple GAE app with Firestore example</title>
+    <title>Simple GAE app with SQL example</title>
 
     <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
-    <h1>Simple GAE app with Firestore example</h1>
+    <h1>Simple GAE app with SQL example</h1>
 
     <p>
         Enter your message:
@@ -19,7 +19,7 @@
     </p>
 
     {% for item in messages %}
-    <p>{{ item.message }} <small><em>(message ID: {{item.id}})</em></small></p>
+        <p>{{ item.text }} <small><em>(message ID: {{item.id}})</em></small></p>
     {% endfor %}
 
 </body>
