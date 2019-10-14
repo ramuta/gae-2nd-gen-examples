@@ -10,7 +10,7 @@ class Message(ndb.Model):
     @classmethod
     def create(cls, text):
         with client.context():  # with client.context() is obligatory to use in the new ndb library
-            message = Message(text=text)
+            message = cls(text=text)
             message.put()
 
             return message
