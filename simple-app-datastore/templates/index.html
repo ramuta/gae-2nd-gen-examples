@@ -19,7 +19,7 @@
     </p>
 
     {% for item in messages %}
-    <p>{{ item.message }}</p>
+    <p>{{ item.text }}, {{ item.created.strftime("%d %b %Y") }}</p>
     {% endfor %}
 
 </body>

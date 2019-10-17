@@ -1,3 +1,4 @@
+import datetime
 import os
 
 import mock
@@ -31,16 +32,23 @@ def index():
     if request.method == "POST":
         # add message to Datastore
         entity = datastore.Entity(key=db.key("Message"))
-        message = {"message": request.form.get("message")}
+
+        # message model
+        message = {
+            "text": request.form.get("message"),
+            "created": datetime.datetime.now(),
+            # you could add other fields here, like "author", "email" etc.
+        }
+
         entity.update(message)
         db.put(entity)
 
     return render_template("index.html", messages=messages)
 
 
-@app.route("/test", methods=["GET"])
-def test():
-    return "test"
+@app.route("/basic", methods=["GET"])
+def basic():
+    return "Basic handler without HTML template"
 
 
 if __name__ == '__main__':
