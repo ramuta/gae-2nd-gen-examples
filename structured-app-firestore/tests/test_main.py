@@ -25,6 +25,6 @@ def test_index_page(client):
     assert b'Enter your message' in response.data
 
 
-def test_test_page(client):
-    response = client.get('/test')
-    assert b'test' in response.data
+def test_basic_page(client):
+    response = client.get('/basic')
+    assert b'Basic handler without HTML template' in response.data

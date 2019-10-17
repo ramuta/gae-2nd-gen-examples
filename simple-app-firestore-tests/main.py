@@ -1,3 +1,4 @@
+import datetime
 import logging
 import os
 
@@ -39,33 +40,35 @@ def index():
 
     messages = []
     for message in messages_gen:
-        logging.warning(type(message))  # Type is DocumentSnapshot (google/cloud/firestore_v1/document.py)
-        logging.warning(message.get("message"))  # this is how you get data from DocumentSnapshot
-
-        # interesting in-built time features
-        logging.warning(message.read_time)
-        logging.warning(message.create_time)
-        logging.warning(message.update_time)
-
         message_dict = message.to_dict()  # converting DocumentSnapshot into a dictionary
 
         message_dict["id"] = message.id  # adding message ID to the dict, because it's not there by default
         messages.append(message_dict)  # appending the message dict to the messages list
+
+        # logging.warning(type(message))  # Type is DocumentSnapshot (google/cloud/firestore_v1/document.py)
+        # logging.warning(message.get("text"))  # this is how you get data from DocumentSnapshot
+
+        # interesting in-built time features
+        # logging.warning(message.read_time)
+        # logging.warning(message.create_time)
+        # logging.warning(message.update_time)
 
     if request.method == "POST":
         # add message to Firestore
         message_ref = messages_ref.document()  # create a message document reference
         # now you can create or update the message document (set: if it exists, update it. If not, create a new one).
         message_ref.set({
-            u'message': u'{}'.format(request.form.get("message")),
+            u'text': u'{}'.format(request.form.get("message")),
+            u'created': datetime.datetime.now(),
+            # you could add other fields here, like "author", "email" etc.
         })
 
     return render_template("index.html", messages=messages)
 
 
-@app.route("/test", methods=["GET"])
-def test():
-    return "test"
+@app.route("/basic", methods=["GET"])
+def basic():
+    return "Basic handler without HTML template"
 
 
 if __name__ == '__main__':

@@ -1,3 +1,5 @@
+import datetime
+
 from models.db_settings import get_db
 
 
@@ -15,7 +17,9 @@ class Message:
         message_ref = messages_ref.document()  # create a message document reference
         # now you can create or update the message document (set: if it exists, update it. If not, create a new one).
         message_ref.set({
-            u'message': u'{}'.format(text),  # we could also name this smth else, like "text", to avoid confusion
+            u'text': u'{}'.format(text),  # we could also name this smth else, like "text", to avoid confusion
+            u'created': datetime.datetime.now(),
+            # you could add other fields here, like "author", "email" etc.
         })
 
         # create message dict

@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 # URLs
 app.add_url_rule(rule="/", endpoint="index", view_func=public.index, methods=["GET", "POST"])
-app.add_url_rule(rule="/test", endpoint="test", view_func=public.test, methods=["GET"])
+app.add_url_rule(rule="/basic", endpoint="basic", view_func=public.basic, methods=["GET"])
 
 
 if __name__ == '__main__':

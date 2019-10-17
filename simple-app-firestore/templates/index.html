@@ -19,7 +19,7 @@
     </p>
 
     {% for item in messages %}
-    <p>{{ item.message }} <small><em>(message ID: {{item.id}})</em></small></p>
+        <p>{{ item.text }}, {{ item.created.strftime("%d %b %Y") }}</p>
     {% endfor %}
 
 </body>
