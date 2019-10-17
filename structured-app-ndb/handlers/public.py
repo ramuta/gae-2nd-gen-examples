@@ -9,5 +9,5 @@ def index():
     return render_template("index.html", messages=Message.fetch_all())
 
 
-def test():
-    return "test"
+def basic():
+    return "Basic handler without HTML template"

@@ -39,6 +39,7 @@ if test == "yes":
     emulator_port = "8002"
     text_bottom = "tests"
     main_command = "pytest -p no:warnings"
+    os.environ["TESTING"] = "yes"
 else:
     print("Preparing to run the web app.")
     emulator_port = "8001"
