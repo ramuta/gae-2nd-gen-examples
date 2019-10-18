@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Structured GAE app with SQL</title>
+
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <h1>Structured GAE app with SQL</h1>
+
+    <p>
+        Enter your message:
+
+        <form method="post" action="/">
+            <input type="text" name="message">
+            <button type="submit">Submit</button>
+        </form>
+    </p>
+
+    {% for item in messages %}
+        <p>{{ item.text }} <small><em>(message ID: {{item.id}})</em></small></p>
+    {% endfor %}
+
+</body>
+</html>
