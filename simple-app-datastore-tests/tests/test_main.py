@@ -1,4 +1,6 @@
 import os
+from urllib.request import urlopen, Request
+
 import pytest
 from main import app
 
@@ -15,8 +17,8 @@ def client():
 
 
 def cleanup():
-    # clean up/delete the DB (drop all tables in the database)
-    pass
+    # clean up/delete the database (reset Datastore)
+    urlopen(Request("http://localhost:8002/reset", data={}))  # this sends an empty POST request
 
 
 def test_index_page(client):
