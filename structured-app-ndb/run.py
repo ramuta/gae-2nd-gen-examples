@@ -38,9 +38,8 @@ if test == "yes":
     print("Preparing to run tests.")
     emulator_port = "8002"
     text_bottom = "tests"
-    main_command = "pytest -p no:warnings"
+    main_command = "export TESTING=yes && pytest -p no:warnings"
     storage = "--no-store-on-disk"
-    os.environ["TESTING"] = "yes"
 else:
     print("Preparing to run the web app.")
     emulator_port = "8001"

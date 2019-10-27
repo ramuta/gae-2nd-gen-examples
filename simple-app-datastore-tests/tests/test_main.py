@@ -1,4 +1,3 @@
-import os
 from urllib.request import urlopen, Request
 
 import pytest
@@ -7,8 +6,6 @@ from main import app
 
 @pytest.fixture
 def client():
-    os.environ["TESTING"] = "yes"
-
     client = app.test_client()
 
     cleanup()  # clean up before every test
