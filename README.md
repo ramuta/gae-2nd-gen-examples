@@ -6,10 +6,13 @@ This repository holds examples of Python 3 web apps that run on the Google App E
 
 ## Prerequisites
 
-- [Python 3](https://www.python.org/)
-- Java JDK (I recommend **OpenJDK 11** from [AdoptOpenJDK](https://adoptopenjdk.net/)) - this is needed to run the Datastore 
-or Firestore emulator (via Cloud SDK)
-- [Cloud SDK](https://cloud.google.com/sdk/docs/quickstarts)
+Install the following on your computer:
+
+- Both [Python 2](https://www.python.org/downloads/) and [Python 3](https://www.python.org/). Python 2 is needed 
+because Cloud SDK depends on it.
+- Java JDK (I recommend **OpenJDK 11** from [AdoptOpenJDK](https://adoptopenjdk.net/)) - this is needed to run the 
+Datastore or Firestore emulator (via Cloud SDK).
+- [Cloud SDK](https://cloud.google.com/sdk/docs/quickstarts).
 
 In order to deploy the web app on Google Cloud, you will probably need to connect your credit card to it. But this 
 doesn't mean Google will start charging you right away - the free quota is pretty generous and you can also set a 

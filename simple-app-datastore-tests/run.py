@@ -38,13 +38,15 @@ if test == "yes":
     print("Preparing to run tests.")
     emulator_port = "8002"
     text_bottom = "tests"
-    main_command = "export TESTING=yes && pytest -p no:warnings"
+    os.environ["TESTING"] = "yes"
+    main_command = "pytest -p no:warnings"
     storage = "--no-store-on-disk"
 else:
     print("Preparing to run the web app.")
     emulator_port = "8001"
     text_bottom = "web app"
-    main_command = "export FLASK_APP=main.py && flask run --host localhost --port 8080 --reload"
+    os.environ["FLASK_APP"] = "main.py"
+    main_command = "flask run --host localhost --port 8080 --reload"
     storage = "--data-dir=."
 
 # Run datastore emulator
