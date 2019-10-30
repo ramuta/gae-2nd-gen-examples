@@ -8,19 +8,15 @@ This repository holds examples of Python 3 web apps that run on the Google App E
 
 Install the following on your computer:
 
-- Both [Python 2](https://www.python.org/downloads/) and [Python 3](https://www.python.org/). Python 2 is needed 
+- Install both [Python 2](https://www.python.org/downloads/) and [Python 3](https://www.python.org/). Python 2 is needed 
 because Cloud SDK depends on it.
-- Java JDK (I recommend **OpenJDK 11** from [AdoptOpenJDK](https://adoptopenjdk.net/)) - this is needed to run the 
+- Install Java JDK (I recommend **OpenJDK 11** from [AdoptOpenJDK](https://adoptopenjdk.net/)) - this is needed to run the 
 Datastore or Firestore emulator (via Cloud SDK).
-- [Cloud SDK](https://cloud.google.com/sdk/docs/quickstarts).
+- Install [Cloud SDK](https://cloud.google.com/sdk/docs/quickstarts).
 
-In order to deploy the web app on Google Cloud, you will probably need to connect your credit card to it. But this 
-doesn't mean Google will start charging you right away - the free quota is pretty generous and you can also set a 
-daily spending limit to 0 USD (see step 4 below in the "Deployment to GAE" section).
+## Install Cloud SDK components
 
-### Cloud SDK components
-
-Make sure you have the following Cloud SDK components installed ([instructions](https://cloud.google.com/sdk/docs/components)):
+Make sure you have the following Cloud SDK components installed:
 
 - Cloud SDK Core Libraries (core)
 - gcloud app Python Extensions (app-engine-python)
@@ -32,7 +28,29 @@ If you'll use Datastore or Firestore, you'll need to install one of these (or bo
 - Cloud Datastore Emulator (cloud-datastore-emulator)
 - Cloud Firestore Emulator (cloud-firestore-emulator)
 
-## Examples
+### Cloud SDK components: Installation process
+
+Firstly, check which of these components you have already installed:
+
+    gcloud components list
+
+At least one or two of them should already be installed. For the others, install them using this command:
+
+    gcloud components install <component-name>
+
+For example, if you want to install the Datastore Emulator, use this command:
+
+    gcloud components install cloud-datastore-emulator
+
+Also, make sure that your already installed components are up-to-date:
+
+    gcloud components update
+
+If you need more instructions, check here: ([Cloud SDK components documentation](https://cloud.google.com/sdk/docs/components))
+
+## Code examples
+
+### Simple examples:
 
 - **[simple-gae-app](https://github.com/smartninja/gae-2nd-gen-examples/tree/master/simple-gae-app)**: A simple Flask app with all the basic GAE settings needed. No database included here.
 - **[simple-app-datastore](https://github.com/smartninja/gae-2nd-gen-examples/tree/master/simple-app-datastore)**: A simple Flask app that allows you to store items in Datastore (Datastore Emulator is used).
@@ -40,6 +58,9 @@ If you'll use Datastore or Firestore, you'll need to install one of these (or bo
 - **[simple-app-firestore](https://github.com/smartninja/gae-2nd-gen-examples/tree/master/simple-app-firestore)**: Flask app with the Firestore database.
 - **[simple-app-firestore-tests](https://github.com/smartninja/gae-2nd-gen-examples/tree/master/simple-app-firestore-tests)**: Flask app with Firestore + tests.
 - **[simple-app-sql](https://github.com/smartninja/gae-2nd-gen-examples/tree/master/simple-app-sql)**: A simple Flask app with an SQL database (localhost: SQLite; Google Cloud: PostgreSQL).
+
+### Advanced examples:
+
 - **[structured-app-sql](https://github.com/smartninja/gae-2nd-gen-examples/tree/master/structured-app-sql)**: A structured Flask app with SQL database and tests.
 - **[structured-app-firestore](https://github.com/smartninja/gae-2nd-gen-examples/tree/master/structured-app-firestore)**: A structured Flask app with Firestore + tests. Gives you an idea how to structure your web app.
 - **[structured-app-ndb](https://github.com/smartninja/gae-2nd-gen-examples/tree/master/structured-app-ndb)**: An example using the new ndb library for Python 3 GAE runtime.
@@ -50,6 +71,10 @@ If you'll use Datastore or Firestore, you'll need to install one of these (or bo
 Click on each example and check the README.md there - it has all the instructions you need.
 
 ## Deployment to Google App Engine
+
+In order to deploy the web app on Google Cloud, you will probably need to connect your credit card to it. But this 
+doesn't mean Google will start charging you right away - the free quota is pretty generous and you can also set a 
+daily spending limit to 0 USD (see step 4 below in the "Deployment to GAE" section).
 
 ### 1) gcloud init
 
