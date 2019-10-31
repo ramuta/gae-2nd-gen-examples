@@ -36,9 +36,10 @@ If the `run.py` script does not work on your computer, you'll have to run the Em
 
 First run the datastore emulator:
 
-    gcloud beta emulators datastore start --no-legacy --data-dir=. --project test --host-port "localhost:8001"
+    gcloud beta emulators datastore start --consistency=1 --data-dir=. --project test --host-port "localhost:8001"
 
-Notice that the `8001` port has been used. This is for running the web app. To run tests, use port `8002`.
+Notice that the `8001` port has been used. This is for running the web app. To run tests, use port `8002`. And instead 
+of `--data-dir=.` use `--no-store-on-disk`.
 
 ### Run the web app.
 

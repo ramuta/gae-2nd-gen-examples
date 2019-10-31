@@ -50,8 +50,8 @@ else:
     storage = "--data-dir=."
 
 # Run datastore emulator
-emulator_command = 'gcloud beta emulators datastore start --no-legacy {0} --project test ' \
-                   '--host-port "localhost:{1}"'.format(storage, emulator_port)
+emulator_command = 'gcloud beta emulators datastore start --consistency=1 {storage} --project test ' \
+                   '--host-port "localhost:{port}"'.format(storage=storage, port=emulator_port)
 run_datastore = os.popen(emulator_command)
 
 # wait for the Emulator to start
