@@ -2,7 +2,7 @@
 
 An example of a web app with username/password login (no emails sent, no email addresses stored).
 
-![](static/img/preview.png)
+![](static/custom/img/preview.png)
 
 ## Tech stack
 
