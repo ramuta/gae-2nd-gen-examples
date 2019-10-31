@@ -65,6 +65,11 @@ If you need more instructions, check here: ([Cloud SDK components documentation]
 - **[structured-app-firestore](https://github.com/smartninja/gae-2nd-gen-examples/tree/master/structured-app-firestore)**: A structured Flask app with Firestore + tests. Gives you an idea how to structure your web app.
 - **[structured-app-ndb](https://github.com/smartninja/gae-2nd-gen-examples/tree/master/structured-app-ndb)**: An example using the new ndb library for Python 3 GAE runtime.
 - **[env-var-example](https://github.com/smartninja/gae-2nd-gen-examples/tree/master/env-var-example)**: GAE does not support environment variables, so the alternative is to write them in the database instead. Here's an example how.
+- **[auth-username-password](https://github.com/smartninja/gae-2nd-gen-examples/tree/master/auth-username-password)**: Username/password login example built with Flask, Datastore, ndb library and Python 3 GAE runtime.
+
+### Examples from other repositories:
+
+- **[ramuta/ninjatodo](https://github.com/ramuta/ninjatodo)**: A task management system (TODO app) built with Python 3, Flask, Datastore, ndb and running on GAE second generation.
 
 ### How to run the examples?
 

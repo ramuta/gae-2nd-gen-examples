@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}Registration{% endblock title %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Registration</h1>
+
+    <p>If you've already registered, proceed to <a href="/login">login</a></p>
+
+    <div class="row">
+        <div class="col-md-6">
+            <form method="post">
+                <div class="form-group">
+                    <label for="usernameInput">Username</label>
+                    <input type="text" class="form-control" id="usernameInput" placeholder="Enter username" name="registration-username" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="passwordInput">Password</label>
+                    <input type="password" class="form-control" id="passwordInput" placeholder="Password" name="registration-password" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="repeatInput">Repeat password</label>
+                    <input type="password" class="form-control" id="repeatInput" placeholder="Repeat password" name="registration-repeat" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}

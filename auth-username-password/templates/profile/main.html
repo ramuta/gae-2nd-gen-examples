@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block title %}Profile{% endblock title %}
+
+{% block scripts %}
+<script>
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
+{% endblock scripts %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>My profile</h1>
+
+    <h3 class="mt-2">Sessions</h3>
+    
+    <div class="table-responsive">
+    <table class="table table-dark mt-4 text-center">
+        <tr>
+            <th>Session ID</th>
+            <th>Platform</th>
+            <th>IP</th>
+            <th>Browser</th>
+            <th>Location</th>
+            <th>Expires</th>
+            <th>Tools</th>
+        </tr>
+
+        {% for session in user.sessions %}
+        <tr>
+            <td data-toggle="tooltip" data-placement="top" title="{{ session.user_agent }}">
+                {{ session.token_hash|truncate(5, end='') }}
+            </td>
+
+            <td>{{ session.platform }}</td>
+            <td>{{ session.ip }}</td>
+            <td>{{ session.browser }}</td>
+            <td>{{ session.city }}, {{ session.country }}</td>
+            <td>{{ session.expired.strftime("%d %b %Y") }}</td>
+
+            <td>
+                <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteSessionModal{{ session.token_hash|truncate(5, end='') }}">Delete</button>
+            </td>
+
+            <!-- Delete Session Token Modal -->
+            <div class="modal fade" id="deleteSessionModal{{ session.token_hash|truncate(5, end='') }}" tabindex="-1" role="dialog" aria-labelledby="deleteSessionModalLabel{{ session.token_hash|truncate(5, end='') }}" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="deleteSessionModalLabel{{ session.token_hash|truncate(5, end='') }}">Delete session token #{{ session.token_hash|truncate(5, end='') }}</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>
+                                Do you really want to delete session #{{ session.token_hash|truncate(5, end='') }}?
+                            </p>
+
+                            <p>
+                                <em>What does this mean? <br><br>
+
+                                    It means that you'll be logged out from this web app on the device that uses this
+                                    session to log in. But don't worry, you'll be able to login after that again with
+                                    your username and password.
+                                </em>
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <form method="post" action="/profile/session/delete">
+                                <input type="hidden" name="delete-session-token" value="{{ session.token_hash|truncate(5, end='') }}">
+                                <input type="hidden" name="csrf" value="{{ csrf }}">
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END Delete Session Token Modal -->
+        </tr>
+        {% endfor %}
+    </table>
+    </div>
+</div>
+{% endblock content %}
