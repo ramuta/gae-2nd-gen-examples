@@ -25,7 +25,7 @@ def login(**params):
             user = User.get_by_username(username=username)
 
             if not user:
-                return abort(404)
+                return abort(404, description="No user found!")
 
             # check if passwords match (if not: 403)
             if User.is_password_valid(user=user, password=password):
