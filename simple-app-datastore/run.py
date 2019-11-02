@@ -2,6 +2,7 @@ import os
 import time
 import atexit
 import urllib.request
+import sys
 
 # Datastore emulator instance
 run_datastore = None
@@ -30,8 +31,13 @@ def emulator_started(port="8001"):
 # register the Exit handler
 atexit.register(exit_handler)
 
-# Ask user if they want to run a web app or tests
-test = input("Would you like to run tests? (yes/no; default is no): ")
+if "test" in sys.argv:
+    test = "yes"
+elif "app" in sys.argv:
+    test = "no"
+else:
+    # Ask user if they want to run a web app or tests
+    test = input("Would you like to run tests? (yes/no; default is no): ")
 
 # Prepare the correct port number and the main command based on the user's input
 if test == "yes":
