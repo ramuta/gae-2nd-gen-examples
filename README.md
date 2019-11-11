@@ -3,6 +3,8 @@
 This repository holds examples of Python 3 web apps that run on the Google App Engine (GAE) 2nd Generation environment.
 
 > If you find this repository useful, please **star** it ;) 
+> 
+> **Recommended**: If you're looking for a GAE/Flask/Py3 Starter Project template, check out this link: [GAE/Py3 Boilerplate](https://github.com/smartninja/gae-py3-boilerplate).
 
 ## Prerequisites
 
@@ -69,6 +71,7 @@ If you need more instructions, check here: ([Cloud SDK components documentation]
 
 ### Examples from other repositories:
 
+- **(recommended)** **[smartninja/gae-py3-boilerplate](https://github.com/smartninja/gae-py3-boilerplate)**: this is a starter project boilerplate that has the auth system, translations, emailing system and some other goodies already implemented.
 - **[ramuta/ninjatodo](https://github.com/ramuta/ninjatodo)**: A task management system (TODO app) built with Python 3, Flask, Datastore, ndb and running on GAE second generation.
 
 ### How to run the examples?
